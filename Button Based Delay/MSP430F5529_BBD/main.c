@@ -18,7 +18,7 @@ int main(void)
     P2IFG &= ~BIT1;     // Disables the interrupt flag
 
     TA1CCTL0 = CCIE;                           // CCR0 interrupt enabled
-    TA1CTL = TASSEL_1 + MC_1 + ID_3;   // SMCLK, continuous mode, clear timer A register, 8 part divider
+    TA1CTL = TASSEL_1 + MC_1 + ID_3;   // ACLK, Up mode, clear timer A register, 8 part divider
     TA1CCR0 = (400);                            // Sets the period
 
     __bis_SR_register(GIE);                   // Allows for the use of interrupts
