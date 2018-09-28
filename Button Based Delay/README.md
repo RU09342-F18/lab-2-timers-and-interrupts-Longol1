@@ -1,12 +1,3 @@
-# Button Based Delay
-Now that you have begun to familiarize yourself with the TIMER modules, why don't we make an interesting change to our code from the last lab.
+MSP430F5529 - For this I used P2.1 button as the input and interrupt pin. I used the P1.0 as the LED output. I configured the clock to initially run at 10Hz by setting the period to 400. I first configured the clock to use ACLK, up mode, and use the 8 part divider. The timer interrupt toggles the P1.0 LED. The button interrupt is what will change the clock speed when it is being held down. The P2.1 is detected by a falling edge which triggers the interrupt. During this interrupt it will clear the clock then swtich to continuous mode so it can count pass the set period. When the rising edge is detected it stops the clock takes the period and puts it into the register to change the clock speed then switches back into up mode.  
 
-## Task
-Setup your microcontroller to initially blink and LED at a rate of 10Hz upon restarting or powering up. Then utilizing one of the buttons on board, a user should be able to set the delay or blinking rate of the LED by holding down a button. The duration in which the button is depressed should then become the new rate at which the LED blinks. As previously stated, you most likely will want to take advantage of the fact that TIMER modules exist and see if you can let them do a bulk of the work for you.
-
-### Extra Work
-## Reset Button
-What is a piece of electronics without a reset button? Instead of relying on resetting your processor using the built in reset circuitry, why not instead use another button to reset the rate back to 10Hz.
-
-## Button Based Hertz
-Most likely using two buttons, what if instead of making a delay loop based on the time, the user could instead enter a mode where the number of times they pressed the button would become the number in Hz of the blinking rate? How do you think you would implement that with just one button?
+MSP430G2553 - For this I used P1.3 button as the input and interrupt pin. I used the P1.0 as the LED output. I configured the clock to initially run at 10Hz by setting the period to 400. I first configured the clock to use ACLK, up mode, and use the 8 part divider. The timer interrupt toggles the P1.0 LED. The button interrupt is what will change the clock speed when it is being held down. The P1.3 is detected by a falling edge which triggers the interrupt. During this interrupt it will clear the clock then swtich to continuous mode so it can count pass the set period. When the rising edge is detected it stops the clock takes the period and puts it into the register to change the clock speed then switches back into up mode.
